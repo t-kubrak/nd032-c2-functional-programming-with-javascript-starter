@@ -2,6 +2,9 @@
 const text = ['The ships', 'hung in the sky,', 'much the way', 'that bricks don`t']
 
 // Your Code Here
+const joinedText = text.reduce((joined, current) => `${joined} ${current}`)
+
+console.log(joinedText)
 
 // expected output: "The ships hung in the sky, much the way that bricks don't"
 
@@ -28,6 +31,10 @@ const scores = [
 ]
 
 // Your Code Here
+const winningTeam = scores.reduce((winner, currentTeam) =>
+    winner.score > currentTeam.score ? winner : currentTeam)
+
+console.log(winningTeam.team)
 
 // expected output: "C"
 
@@ -58,5 +65,12 @@ const ships = [
 ]
 
 // Your Code Here
+const fastestShip = ships.reduce((fastest, current) => {
+    const speedFastest = parseInt(fastest.speed.slice(0, -1))
+    const speedCurrent = parseInt(current.speed.slice(0, -1))
+    return speedFastest > speedCurrent ? fastest : current
+})
+
+console.log(fastestShip.name)
 
 // Expected output: Tie Fighters
