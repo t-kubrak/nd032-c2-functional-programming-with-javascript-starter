@@ -33,6 +33,8 @@ const ids = [
     'IUABC'
 ]
 
+const findAbc = ids.find(letters => letters.includes('ABC'))
+console.log(findAbc)
 
 // ----------------------------------------------------------
 // INCLUDE EXERCISES
@@ -51,6 +53,9 @@ const admins = [
     '12mnz09v87bas78fb12',
     '098Xc8x76m3nb4aposi'
 ]
+
+const userIsAdmin = admins.includes(currentUserId)
+console.log(userIsAdmin)
 
 // ----------------------------------------------------------
 
@@ -75,3 +80,6 @@ const B = [
     '298374naskdj273ubsl',
     '098LKJnsvijevkwejf6'
 ]
+
+const aHasB = A.filter(value => B.includes(value))
+console.log(aHasB)
