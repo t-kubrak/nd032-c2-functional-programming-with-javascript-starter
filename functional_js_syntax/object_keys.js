@@ -9,6 +9,11 @@ const character = {
 };
 
 console.log(Object.keys(character));
+
+Object.keys(character).map(property => {
+    console.log(`This character has a ${character[property]} ${property}`)
+    return `This character has a ${character[property]} ${property}`;
+})
 // Expected Output: 
 // This character has a(n) id.
 // This character has a(n) name.

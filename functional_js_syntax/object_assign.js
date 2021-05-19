@@ -26,7 +26,7 @@ const incomingState = {
 
 state = Object.assign(state, incomingState);
 // Object.assign(target, source)
-
+console.log(state)
 // Resulting object
 // state = { 
 //     name: "Mal", 
@@ -42,3 +42,14 @@ state = Object.assign(state, incomingState);
 // } 
 
 // Your Code here
+const updatedState = {
+    name: 'Jack',
+    favoriteThing: {
+        item: {
+            name: "Not complicated"
+        }
+    }
+
+}
+state = Object.assign(state, updatedState)
+console.log(state)
