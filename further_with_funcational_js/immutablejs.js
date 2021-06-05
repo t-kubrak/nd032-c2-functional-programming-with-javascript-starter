@@ -29,6 +29,7 @@ const map2 = Immutable.Map({
 
 // YOUR TURN --------------------------------------------------------------
 // create `map3` immutable object by merging `map1` and `map2`
+const map3 = Immutable.merge(map1, map2)
 
 console.log(map1.toJS())
 console.log(map2.toJS())
@@ -53,7 +54,7 @@ console.log(map4.toJS())
 // Can you locate the contents of our variable 'obj' inside the Immutable Map map3?
 
 //Your code
-
+console.log(map3) 
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
 
@@ -131,3 +132,17 @@ const characters = [
     power_level: 140
   }
 ]
+
+const immutableCharacters = Immutable.List(characters)
+  .push({
+    name: 'Kathryn Janeway',
+    role: 'Captain',
+    universe: 'Star Trek',
+    weapon: 'Wit',
+    power_level: 140
+  })
+
+console.log(Array.from(immutableCharacters))
+
+const withoutJabba = immutableCharacters.delete(1)
+console.log(Array.from(withoutJabba))
