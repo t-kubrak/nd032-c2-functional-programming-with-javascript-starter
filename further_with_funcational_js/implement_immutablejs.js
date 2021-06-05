@@ -1,3 +1,4 @@
+const Immutable = require('immutable');
 // implement_immutablejs.js
 
 // Lets think about how we could refactor our application state flow to use Immutable. 
@@ -15,3 +16,20 @@ const updateStore = (store, newState) => {
     store = Object.assign(store, newState)
     render(root, store)
 }
+
+let immutableStore = Immutable.Map({ 
+    user: Immutable.Map({ 
+        firstName: 'John', 
+        lastName: 'Doe' 
+    }), 
+})
+
+let newState = {user: {name: "Name"}}
+
+function updateStoreImmutable(state, newState) {
+    store = state.merge(newState)
+    render(root, store)
+}
+
+updateStoreImmutable(immutableStore, newState)
+console.log(store.getIn(['user', 'name']))
